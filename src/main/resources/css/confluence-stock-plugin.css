@@ -1,0 +1,20 @@
+a.stock:before {
+    color: #999999;
+    content: "$";
+    display: inline-block;
+    font-size: 12px;
+    line-height: 16px;
+    margin-right: 2px;
+    text-decoration: none;
+    vertical-align: top;
+}
+
+a.stock {
+    background: none repeat scroll 0 0 #F5F5F5;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px 3px 3px 3px;
+    display: inline-block;
+    line-height: 15px;
+    padding: 0 2px;
+    white-space: nowrap;
+}

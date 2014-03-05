@@ -1,0 +1,49 @@
+<atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="confluence-stock-plugin"/>
+    
+    <!-- add our web resources -->
+    <web-resource key="confluence-stock-editor-resources" name="confluence-stock-plugin editor Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        
+        <resource type="download" name="confluence-stock-plugin.css" location="/css/confluence-stock-plugin.css"/>
+        <resource type="download" name="confluence-stock-plugin.js" location="/js/editor_plugin_src.js"/>
+        <resource type="download" name="help-dialog.js" location="/js/help-dialog.js"/>
+        <resource type="download" name="tinyMce-autocomplete-settings-stocks.js" location="/js/tinyMce-autocomplete-settings-stocks.js"/>
+        <resource type="download" name="images/" location="/images"/>
+
+        <context>editor</context>
+    </web-resource>
+
+    <web-resource key="confluence-stock-page-resources" name="confluence-stock-plugin page Web Resources">
+        <resource type="download" name="confluence-stock-plugin.css" location="/css/confluence-stock-plugin.css"/>
+        <resource type="download" name="help-dialog.js" location="/js/help-dialog.js"/>
+        <resource type="download" name="links-stock.js" location="/js/links-stock.js"/>
+        <context>page</context>
+        <context>blogpost</context>
+        <context>editor-content</context>
+    </web-resource>
+
+    <web-resource key="confluence-stock-shortcut-resources" name="confluence-stock-plugin shortcut Web Resources">
+        <resource type="download" name="keyboard-shortcut.js" location="/js/keyboard-shortcut.js"/>
+        <context>atl.general</context>
+        <context>atl.admin</context>
+    </web-resource>
+    
+    <!-- publish our component -->
+    <component key="myPluginComponent" class="com.atlassian.confluence.plugins.MyPluginComponentImpl" public="true">
+        <interface>com.atlassian.confluence.plugins.MyPluginComponent</interface>
+    </component>
+    
+    <!-- import from the product container -->
+    <component-import key="applicationProperties" interface="com.atlassian.sal.api.ApplicationProperties" />
+    
+</atlassian-plugin>
