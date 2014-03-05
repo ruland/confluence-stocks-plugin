@@ -1,4 +1,4 @@
-a.stock:before {
+a.stocks:before {
     color: #999999;
     content: "$";
     display: inline-block;
@@ -9,7 +9,7 @@ a.stock:before {
     vertical-align: top;
 }
 
-a.stock {
+a.stocks {
     background: none repeat scroll 0 0 #F5F5F5;
     border: 1px solid #DDDDDD;
     border-radius: 3px 3px 3px 3px;

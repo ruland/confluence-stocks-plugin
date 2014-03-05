@@ -15,7 +15,7 @@ AJS.Rte.BootstrapManager.addOnInitCallback(function() {
                 html: link2,
                 text: link2
             },
-            classes: ["stock"]
+            classes: ["stocks"]
         });
     }
 

@@ -8,14 +8,14 @@
     </plugin-info>
 
     <!-- add our i18n resource -->
-    <resource type="i18n" name="i18n" location="confluence-stock-plugin"/>
+    <resource type="i18n" name="i18n" location="confluence-stocks-plugin"/>
     
     <!-- add our web resources -->
-    <web-resource key="confluence-stock-editor-resources" name="confluence-stock-plugin editor Web Resources">
+    <web-resource key="confluence-stock-editor-resources" name="confluence-stocks-plugin editor Web Resources">
         <dependency>com.atlassian.auiplugin:ajs</dependency>
         
-        <resource type="download" name="confluence-stock-plugin.css" location="/css/confluence-stock-plugin.css"/>
-        <resource type="download" name="confluence-stock-plugin.js" location="/js/editor_plugin_src.js"/>
+        <resource type="download" name="confluence-stocks-plugin.css" location="/css/confluence-stocks-plugin.css"/>
+        <resource type="download" name="confluence-stocks-plugin.js" location="/js/editor_plugin_src.js"/>
         <resource type="download" name="help-dialog.js" location="/js/help-dialog.js"/>
         <resource type="download" name="tinyMce-autocomplete-settings-stocks.js" location="/js/tinyMce-autocomplete-settings-stocks.js"/>
         <resource type="download" name="images/" location="/images"/>
@@ -23,8 +23,8 @@
         <context>editor</context>
     </web-resource>
 
-    <web-resource key="confluence-stock-page-resources" name="confluence-stock-plugin page Web Resources">
-        <resource type="download" name="confluence-stock-plugin.css" location="/css/confluence-stock-plugin.css"/>
+    <web-resource key="confluence-stock-page-resources" name="confluence-stocks-plugin page Web Resources">
+        <resource type="download" name="confluence-stocks-plugin.css" location="/css/confluence-stocks-plugin.css"/>
         <resource type="download" name="help-dialog.js" location="/js/help-dialog.js"/>
         <resource type="download" name="links-stock.js" location="/js/links-stock.js"/>
         <context>page</context>
@@ -32,7 +32,7 @@
         <context>editor-content</context>
     </web-resource>
 
-    <web-resource key="confluence-stock-shortcut-resources" name="confluence-stock-plugin shortcut Web Resources">
+    <web-resource key="confluence-stock-shortcut-resources" name="confluence-stocks-plugin shortcut Web Resources">
         <resource type="download" name="keyboard-shortcut.js" location="/js/keyboard-shortcut.js"/>
         <context>atl.general</context>
         <context>atl.admin</context>

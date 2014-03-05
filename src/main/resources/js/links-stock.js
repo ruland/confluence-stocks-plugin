@@ -1,9 +1,9 @@
 AJS.toInit(function($) {
-	AJS.$('a[href*="finance.yahoo.com"]').addClass("stock aui-lozenge aui-lozenge-subtle");
+	AJS.$('a[href*="finance.yahoo.com"]').addClass("stocks aui-lozenge aui-lozenge-subtle");
 
   window.setInterval(function(){
   		/// 
-      AJS.$.each($(".stock").get(), function(i, item) {
+      AJS.$.each($(".stocks").get(), function(i, item) {
         var symbol = item.href.substr(29);
         var quote = encodeURIComponent("select * from yahoo.finance.quotes where symbol in ('" + symbol + "')");
         var url = "http://query.yahooapis.com/v1/public/yql?q=" + quote + "&format=json&diagnostics=true&env=http://datatables.org/alltables.env";
@@ -17,9 +17,9 @@ AJS.toInit(function($) {
             percent = stock.Change_PercentChange;
             item.innerHTML = symbol + " <b>" + price + "</b> [" + percent + "]";
             if (percent.charAt(0) == "+") {
-              item.className = "stock aui-lozenge aui-lozenge-success aui-lozenge-subtle";
+              item.className = "stocks aui-lozenge aui-lozenge-success aui-lozenge-subtle";
             } else {
-              item.className = "stock aui-lozenge aui-lozenge-error aui-lozenge-subtle";
+              item.className = "stocks aui-lozenge aui-lozenge-error aui-lozenge-subtle";
             }
           }  
         });
