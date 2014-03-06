@@ -78,32 +78,6 @@ AJS.Rte.BootstrapManager.addOnInitCallback(function() {
         update : function(autoCompleteControl, link) {
             linkTag = makeLinkTag(link);
             linkTag.insert();
-            /*var quote = encodeURIComponent("select * from yahoo.finance.quotes where symbol in ('" + symbol + "')");
-            var url = "http://query.yahooapis.com/v1/public/yql?q=" + quote + "&format=json&diagnostics=true&env=http://datatables.org/alltables.env";
-            AJS.$.ajax({
-                type: "GET",
-                dataType: "json",
-                url: url,
-                success: function(data) {
-                    if (data.query.results == null) {
-                        diff = "error"; price = "error";
-                        linkTag = makeLinkTag(link, price, diff);
-                        linkTag.insert();
-                    } else {
-                        stockname = data.query.results.quote;
-                        price = stockname.LastTradePriceOnly;
-                        diff = stockname.Change_PercentChange;
-                        linkTag = makeLinkTag(link, price, diff);
-                        linkTag.insert();
-                    }
-                },
-                error: function(xhr, textStatus, errorThrown) {
-                    diff = "error"; price = "error";
-                    linkTag = makeLinkTag(link, price, diff);
-                    linkTag.insert();
-                }
-            });*/
-
         }
     }
 
