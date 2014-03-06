@@ -37,6 +37,16 @@
         <context>atl.general</context>
         <context>atl.admin</context>
     </web-resource>
+
+    <web-item key="editor-insertstock" name="Insert Menu Link - Insert Stock Symbol" section="system.editor.featured.macros.default" weight="0">
+        <description>Displays an Insert stock link in the TinyMCE Insert menu.</description>
+        <label key="editor.autocomplete.stocks.insertstockbutton.title"/>
+        <link linkId="insertstock-button"/>
+    </web-item>
+
+    <web-resource key="stocks-icon" name="Stocks">
+        <resource name="stocks-icon" type="download" location="images/stock_16.png"/>
+    </web-resource>
     
     <!-- publish our component -->
     <component key="myPluginComponent" class="com.atlassian.confluence.plugins.MyPluginComponentImpl" public="true">
