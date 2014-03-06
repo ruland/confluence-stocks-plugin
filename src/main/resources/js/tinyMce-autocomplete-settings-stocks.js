@@ -39,6 +39,12 @@ AJS.Rte.BootstrapManager.addOnInitCallback(function() {
             }
         },
 
+        getAdditionalLinks : function (autoCompleteControl, value, callback) {
+            var additionalLinks = [];
+            callback(value, additionalLinks);
+            return additionalLinks;
+        },
+
         getDataAndRunCallback : function(autoCompleteControl, val, callback) {
 
             var xhr = AJS.$.ajax({
