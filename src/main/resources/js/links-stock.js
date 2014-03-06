@@ -12,14 +12,16 @@ AJS.toInit(function($) {
         dataType: "json",
         url: url,
         success: function(data) {
-          stock = data.query.results.quote;
-          price = stock.LastTradePriceOnly;
-          percent = stock.Change_PercentChange;
-          item.innerHTML = symbol + " (" + stock.Name + ") <b>" + price + "</b> [" + percent + "]";
-          if (percent.charAt(0) == "+") {
-            item.className = "stocks aui-lozenge aui-lozenge-success aui-lozenge-subtle";
-          } else {
-            item.className = "stocks aui-lozenge aui-lozenge-error aui-lozenge-subtle";
+          if (data.query.results != null) {
+            stock = data.query.results.quote;
+            price = stock.LastTradePriceOnly;
+            percent = stock.Change_PercentChange;
+            item.innerHTML = symbol + " (" + stock.Name + ") <b>" + price + "</b> [" + percent + "]";
+            if (percent.charAt(0) == "+") {
+              item.className = "stocks aui-lozenge aui-lozenge-success aui-lozenge-subtle";
+            } else {
+              item.className = "stocks aui-lozenge aui-lozenge-error aui-lozenge-subtle";
+            }
           }
         }  
       });
