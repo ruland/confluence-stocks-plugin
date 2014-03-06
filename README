@@ -1,4 +1,9 @@
-You have successfully created an Atlassian Plugin!
+Confluence Stocks Plugin:
+
+Create automatically updating stock quotes in your pages. 
+Start with a "$" in the editor (ala @mentions) and type the name of a company or symbol.
+
+
 
 Here are the SDK commands you'll use immediately:
 
