@@ -5,15 +5,14 @@
  */
 AJS.Rte.BootstrapManager.addOnInitCallback(function() {
 
-    function makeLinkTag(link, price, diff) {
-        link2 = link.name + " <b>" + price + "</b> [" + diff + "]";
+    function makeLinkTag(link) {
         return Confluence.Link.fromData({
             attrs: {
                 href: "http://finance.yahoo.com/q?s=" + link.href
             },
             body: {
-                html: link2,
-                text: link2
+                html: link.name,
+                text: link.name
             },
             classes: ["stocks"]
         });
@@ -77,9 +76,9 @@ AJS.Rte.BootstrapManager.addOnInitCallback(function() {
         },
 
         update : function(autoCompleteControl, link) {
-            var linkTag;
-            var symbol = link.href;
-            var quote = encodeURIComponent("select * from yahoo.finance.quotes where symbol in ('" + symbol + "')");
+            linkTag = makeLinkTag(link);
+            linkTag.insert();
+            /*var quote = encodeURIComponent("select * from yahoo.finance.quotes where symbol in ('" + symbol + "')");
             var url = "http://query.yahooapis.com/v1/public/yql?q=" + quote + "&format=json&diagnostics=true&env=http://datatables.org/alltables.env";
             AJS.$.ajax({
                 type: "GET",
@@ -103,7 +102,7 @@ AJS.Rte.BootstrapManager.addOnInitCallback(function() {
                     linkTag = makeLinkTag(link, price, diff);
                     linkTag.insert();
                 }
-            });
+            });*/
 
         }
     }
