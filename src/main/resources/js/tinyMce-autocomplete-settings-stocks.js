@@ -24,17 +24,17 @@ AJS.Rte.BootstrapManager.addOnInitCallback(function() {
         endChars : [],
         cache: false,
 
-        dropDownClassName: "autocomplete-stock",
+        dropDownClassName: "autocomplete-stocks",
         selectFirstItem: true,
 
         getHeaderText : function (autoCompleteControl, value) {
             if (value)
             {
-                return AJS.I18n.getText("editor.autocomplete.stock.header.text");
+                return AJS.I18n.getText("editor.autocomplete.stocks.header.text");
             }
             else
             {
-                return AJS.I18n.getText("editor.autocomplete.stock.header.text.hint");
+                return AJS.I18n.getText("editor.autocomplete.stocks.header.text.hint");
             }
         },
 
@@ -61,9 +61,8 @@ AJS.Rte.BootstrapManager.addOnInitCallback(function() {
             var YAHOO = window.YAHOO = {Finance: {SymbolSuggest: {}}};
 
             xhr.done(YAHOO.Finance.SymbolSuggest.ssCallback = function(data){
-                //{"totalSize":0,"result":[],"group":[{"name":"userinfo","result":[{"id":"589825","type":"user","title":"admin","wikiLink":"[~admin]","createdDate":{"friendly":"﻿Jan 06, 2012⚡date.friendly.formatted⚡{0}⁠","date":"2012-01-06T13:33:40+0100"},"creator":{"links":[{"href":"http://roelands-mbp.ams.atlassian.com:1990/confluence/rest/prototype/1/user/system/anonymous","rel":"self"}],"avatarUrl":"/confluence/s/en_GB-1988229788/4395/NOCACHE1/_/images/icons/profilepics/anonymous.png","anonymous":true,"displayName":"﻿Anonymous⚡anonymous.name⁠"},"lastModifier":{"links":[{"href":"http://roelands-mbp.ams.atlassian.com:1990/confluence/rest/prototype/1/user/system/anonymous","rel":"self"}],"avatarUrl":"/confluence/s/en_GB-1988229788/4395/NOCACHE1/_/images/icons/profilepics/anonymous.png","anonymous":true,"displayName":"﻿Anonymous⚡anonymous.name⁠"},"username":"admin","thumbnailLink":{"href":"http://roelands-mbp.ams.atlassian.com:1990/confluence/images/icons/profilepics/default.png","type":"image/png","rel":"thumbnail"},"link":[{"href":"http://roelands-mbp.ams.atlassian.com:1990/confluence/display/~admin","type":"text/html","rel":"alternate"},{"href":"http://roelands-mbp.ams.atlassian.com:1990/confluence/spaces/flyingpdf/pdfpageexport.action?pageId=589825","type":"application/pdf","rel":"alternate"},{"href":"http://roelands-mbp.ams.atlassian.com:1990/confluence/rest/prototype/1/content/589825","rel":"self"}]}]}]}
                 var search = [];
-                if (data.ResultSet.Result == null) {
+                if (data.ResultSet.Result.length === 0) {
                     callback([[{name : val, href : "http://finance.yahoo.com/q?s=" + val}]], val, function(){});
                 } else {
                     for (var i = 0; i <= 4; i++) {
